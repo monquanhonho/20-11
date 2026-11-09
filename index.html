@@ -1393,6 +1393,318 @@
         font-size: 1.05rem;
       }
     }
+
+    /* Mobile Phones (width <= 640px) */
+    @media (max-width: 640px) {
+      :root {
+        --bar-h: 74px;
+        --side-w: 0px;
+      }
+
+      #app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr var(--bar-h);
+      }
+
+      #sidebar {
+        display: none !important;
+      }
+
+      #main {
+        grid-column: 1/2;
+        overflow-x: hidden;
+      }
+
+      .topnav {
+        display: none;
+      }
+
+      /* Playlist Header Mobile */
+      .pl-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 24px 16px 18px;
+        background: linear-gradient(180deg, rgba(29, 185, 84, 0.42) 0%, rgba(18, 18, 18, 0.82) 75%, var(--sp-bg) 100%);
+      }
+
+      .pl-cover {
+        width: 130px;
+        height: 130px;
+        font-size: 2.6rem;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
+      }
+
+      .pl-type {
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+
+      .pl-title {
+        font-size: 1.55rem;
+        line-height: 1.25;
+        margin-bottom: 8px;
+        letter-spacing: -0.5px;
+      }
+
+      .pl-desc {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        margin-bottom: 6px;
+      }
+
+      .pl-meta {
+        justify-content: center;
+        font-size: 0.76rem;
+      }
+
+      .ctrl-row {
+        justify-content: space-between;
+        padding: 10px 16px 14px;
+      }
+
+      #mainPlayBtn {
+        width: 48px;
+        height: 48px;
+      }
+
+      #mainPlayBtn svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      /* Track list on mobile */
+      .tl-head {
+        display: none;
+      }
+
+      .track-row {
+        grid-template-columns: 24px 1fr auto !important;
+        padding: 9px 12px;
+        gap: 12px;
+      }
+
+      .tr-album,
+      .track-row > div:nth-child(4) {
+        display: none !important;
+      }
+
+      .tr-num {
+        font-size: 0.84rem;
+      }
+
+      .tr-title {
+        font-size: 0.86rem;
+      }
+
+      .tr-artist {
+        font-size: 0.74rem;
+      }
+
+      .tr-dur {
+        font-size: 0.76rem;
+        text-align: right;
+      }
+
+      .tr-wait {
+        font-size: 0.75rem;
+      }
+
+      /* Player bar on mobile */
+      #playerBar {
+        padding: 0 10px;
+        gap: 6px;
+      }
+
+      .bar-l {
+        width: auto;
+        max-width: 105px;
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .bar-cover {
+        width: 40px;
+        height: 40px;
+        font-size: 1.15rem;
+      }
+
+      .bar-title {
+        font-size: 0.76rem;
+      }
+
+      .bar-artist {
+        font-size: 0.66rem;
+      }
+
+      .bar-heart {
+        display: none;
+      }
+
+      .bar-c {
+        flex: 1;
+        gap: 4px;
+      }
+
+      .bar-btns {
+        gap: 12px;
+      }
+
+      .bbtn svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      #barPlayPause {
+        width: 30px;
+        height: 30px;
+      }
+
+      #barPlayPause svg {
+        width: 13px;
+        height: 13px;
+      }
+
+      .prog-row {
+        gap: 6px;
+        width: 100%;
+      }
+
+      .t-label {
+        font-size: 0.62rem;
+        min-width: 26px;
+      }
+
+      .bar-r {
+        display: none; /* Ẩn cụm chỉnh âm lượng trên thanh phát vì điện thoại dùng nút volume vật lý */
+      }
+
+      /* Video overlay controls & lyrics on mobile */
+      #vcBar {
+        padding: 24px 14px 18px;
+        gap: 8px;
+      }
+
+      .vc-top {
+        gap: 8px;
+      }
+
+      .vc-tinfo .vc-t {
+        font-size: 1.05rem;
+      }
+
+      .vc-tinfo .vc-a {
+        font-size: 0.76rem;
+      }
+
+      .vc-btn {
+        padding: 6px 12px;
+        font-size: 0.74rem;
+      }
+
+      /* Lời bài hát kiểu karaoke / phụ đề trên mobile: nằm ở đáy màn hình, trên thanh điều khiển */
+      #lyricsPanel {
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 82px;
+        height: 120px;
+        padding: 6px 14px;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+        mask-image: linear-gradient(transparent 0%, black 20%, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(transparent 0%, black 20%, black 80%, transparent 100%);
+      }
+
+      .lyric-line {
+        font-size: 0.86rem;
+        padding: 4px 8px;
+        margin: 3px 0;
+        border-left: none;
+        text-align: center;
+      }
+
+      .lyric-line.active {
+        font-size: 1.04rem;
+        transform: scale(1.03);
+        border-left: none;
+        border-bottom: 2px solid var(--sp-green);
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      /* Overlays on mobile */
+      .start-card {
+        padding: 26px 16px;
+        border-radius: 18px;
+        gap: 12px;
+      }
+
+      .start-badge {
+        font-size: 0.78rem;
+        padding: 4px 12px;
+      }
+
+      .start-title {
+        font-size: 1.55rem;
+      }
+
+      .start-desc {
+        font-size: 0.82rem;
+      }
+
+      .start-btn {
+        padding: 12px 26px;
+        font-size: 0.95rem;
+      }
+
+      .start-hint {
+        font-size: 0.76rem;
+      }
+
+      .pending-title {
+        font-size: 1.75rem;
+        padding: 0 14px;
+      }
+
+      .pending-sub {
+        font-size: 0.92rem;
+      }
+
+      .pending-spinner-box {
+        width: 62px;
+        height: 62px;
+      }
+
+      .spinner-core {
+        font-size: 1.45rem;
+      }
+
+      .end-class {
+        font-size: 1.85rem;
+        letter-spacing: 2px;
+      }
+
+      .end-date {
+        font-size: 1.15rem;
+        letter-spacing: 4px;
+      }
+
+      .end-sub {
+        font-size: 0.82rem;
+        padding: 0 14px;
+        text-align: center;
+      }
+
+      .end-restart {
+        padding: 11px 26px;
+        font-size: 0.88rem;
+      }
+    }
   </style>
 </head>
 
@@ -1695,7 +2007,7 @@
 ============================================================ -->
   <div id="videoOverlay">
     <div id="vidWrap" class="warm">
-      <video id="videoEl" playsinline preload="auto"></video>
+      <video id="videoEl" playsinline webkit-playsinline x5-playsinline preload="auto"></video>
       <audio id="bgmAudio" src="video/nhac.mp3" loop preload="auto"></audio>
       <div id="lyricsPanel"></div>
       <div id="vcBar">
@@ -1893,13 +2205,16 @@
 
     function getTargetBgmVolume() {
       if (isPendingTransition) return 0;
-      if (isBgmDucked) return volLevel * 0.08; // Khi video phát: giảm nhạc nền xuống mức nhỏ (~8%) để nghe rõ tiếng video
-      return volLevel * 0.55; // Khi ở giao diện Spotify: phát nhạc nền du dương
+      if (isBgmDucked) return volLevel * 0.20; // Khi video phát: nhạc nền giữ mức 20% rõ ràng, du dương
+      return volLevel * 0.65; // Khi ở giao diện Spotify / kết thúc: nhạc nền chuẩn ấm áp
     }
 
     function updateBgmVolume(immediate = false) {
       if (!bgmAudio) return;
       const target = Math.max(0, Math.min(1, getTargetBgmVolume()));
+      if (target > 0 && bgmAudio.paused && bgmStarted) {
+        bgmAudio.play().catch(() => {});
+      }
       clearInterval(bgmFadeTimer);
       if (immediate) {
         bgmAudio.volume = target;
@@ -1924,6 +2239,21 @@
         }
       }, stepTime);
     }
+
+    // Đảm bảo nhạc nền chạy lặp lại liên tục xuyên suốt toàn bộ 4 track
+    if (bgmAudio) {
+      bgmAudio.addEventListener('ended', () => {
+        bgmAudio.currentTime = 0;
+        bgmAudio.play().catch(() => {});
+      });
+    }
+
+    // Watchdog giữ nhạc luôn chạy không bao giờ bị dừng giữa chừng
+    setInterval(() => {
+      if (bgmStarted && bgmAudio && bgmAudio.paused && !isPendingTransition) {
+        bgmAudio.play().catch(() => {});
+      }
+    }, 1200);
 
     function unlockAndStartEverything() {
       if (bgmStarted) return;
@@ -2043,11 +2373,17 @@
     function simulateClick(el) {
       clickSound();
       fakeCursor.style.transform = 'translate(-3px,-2px) scale(0.82)';
-      el.style.transform = 'scale(0.93)';
+      if (el) {
+        el.style.transform = 'scale(0.97)';
+        el.style.backgroundColor = 'rgba(29, 185, 84, 0.22)';
+      }
       setTimeout(() => {
         fakeCursor.style.transform = 'translate(-3px,-2px) scale(1)';
-        el.style.transform = '';
-      }, 160);
+        if (el) {
+          el.style.transform = '';
+          el.style.backgroundColor = '';
+        }
+      }, 180);
     }
 
     /* ============================================================
@@ -2057,26 +2393,30 @@
       if (autoSeqDone) return;
       autoSeqDone = true;
 
-      const btn = document.getElementById('mainPlayBtn');
-      const r = btn.getBoundingClientRect();
-      const tx = r.left + r.width / 2, ty = r.top + r.height / 2;
+      // Tìm trực tiếp Track 01 thay vì bấm nút to
+      const row1 = document.querySelector('.track-row[data-track="1"]');
+      if (!row1) { playTrack(1); return; }
 
-      // Start position: somewhere natural
-      fakeCursor.style.left = (window.innerWidth * .72) + 'px';
-      fakeCursor.style.top = (window.innerHeight * .82) + 'px';
+      row1.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      await sleep(400);
+
+      const r = row1.getBoundingClientRect();
+      const tx = r.left + 72, ty = r.top + r.height / 2;
+
+      // Start position: lướt chuột từ phía màn hình tới
+      fakeCursor.style.left = (window.innerWidth * .65) + 'px';
+      fakeCursor.style.top = (window.innerHeight * .65) + 'px';
       fakeCursor.style.display = 'block';
 
       await sleep(900);
-      await moveCursorTo(tx, ty, 3200);  // di chuyển chậm rãi, mượt mà
-      await sleep(1000);                // dừng ngắm trước khi bấm
+      await moveCursorTo(tx, ty, 3500);  // di chuyển chuột chậm rãi tới track 1 (3.5s)
+      await sleep(1400);                // dừng ngắm bài 1 trước khi bấm
 
-      if (userTouched) { fakeCursor.style.display = 'none'; return; }
-
-      simulateClick(btn);
-      await sleep(400);
+      simulateClick(row1);              // Chuột nhấn trực tiếp vào Track 1
+      await sleep(900);                 // dừng 0.9s sau khi click rồi mới phát video
       playTrack(1);
-      await sleep(1000);
-      if (!userTouched) fakeCursor.style.display = 'none';
+      await sleep(1200);
+      fakeCursor.style.display = 'none';
     }
 
     /* ============================================================
@@ -2244,9 +2584,10 @@
       // Play
       videoEl.play().then(() => {
         initVideoAudio();
+        if (bgmAudio && bgmAudio.paused) bgmAudio.play().catch(() => {});
         setPlayState(true);
         startProgressTick();
-        isBgmDucked = true; // Video phát tiếng: tự động giảm nhạc nền xuống
+        isBgmDucked = true; // Video phát tiếng: nhạc nền duy trì ở mức 20%
         updateBgmVolume();
         // Apply stickers for track 3
         if (id === 3) setTimeout(spawnStickers, 600);
@@ -2257,6 +2598,7 @@
         document.addEventListener('click', () => {
           unlockAndStartEverything();
           initVideoAudio();
+          if (bgmAudio && bgmAudio.paused) bgmAudio.play().catch(() => {});
           videoEl.play().then(() => {
             setPlayState(true);
             startProgressTick();
@@ -2289,7 +2631,10 @@
       } else {
         // Show end screen
         videoOv.classList.remove('vis');
-        setTimeout(() => endScreen.classList.add('vis'), 1400);
+        setTimeout(() => {
+          endScreen.classList.add('vis');
+          if (bgmAudio && bgmAudio.paused) bgmAudio.play().catch(() => {});
+        }, 1400);
       }
     }
 
@@ -2343,17 +2688,17 @@
       const waitTxt = document.getElementById('pendingWaitText');
       if (waitTxt) waitTxt.textContent = 'Đang tải...';
 
-      // Di chuyển chuột đến bấm chọn bài đang sáng tác
-      if (!userTouched && pendingRow) {
+      // Di chuyển chuột đến bấm chọn bài đang sáng tác (luôn chạy mượt mà)
+      if (pendingRow) {
         const r = pendingRow.getBoundingClientRect();
         fakeCursor.style.left = (window.innerWidth * .5) + 'px';
         fakeCursor.style.top = (window.innerHeight * .45) + 'px';
         fakeCursor.style.display = 'block';
         await sleep(700);
         await moveCursorTo(r.left + 72, r.top + r.height / 2, 2800);
-        await sleep(900);
-        if (!userTouched) simulateClick(pendingRow);
-        await sleep(500);
+        await sleep(1000);
+        simulateClick(pendingRow);
+        await sleep(600);
         fakeCursor.style.display = 'none';
       }
 
@@ -2379,29 +2724,30 @@
       // Restore volume
       videoEl.volume = volLevel;
       document.getElementById('volFill').style.width = (volLevel * 100) + '%';
-      isBgmDucked = true; // Video track 4 phát tiếng: tiếp tục giữ nhạc nền nhỏ lại
+      isBgmDucked = false; // Khi quay lại giao diện Spotify chuẩn bị bài 4: nhạc nền nổi lên lại
       updateBgmVolume();
+      if (bgmAudio) {
+        bgmAudio.play().catch(() => {});
+      }
 
-      // 6. Switch to Track 4
-      if (!userTouched) {
-        const row4 = document.querySelector('.track-row[data-track="4"]');
-        if (row4) {
-          const r = row4.getBoundingClientRect();
-          fakeCursor.style.left = (window.innerWidth * .5) + 'px';
-          fakeCursor.style.top = (window.innerHeight * .55) + 'px';
-          fakeCursor.style.display = 'block';
-          await sleep(800);
-          await moveCursorTo(r.left + 72, r.top + r.height / 2, 3400); // di chuyển từ từ trong 3.4s
-          await sleep(1400); // dừng lại ngắm bài 4
-          if (!userTouched) simulateClick(row4);
-          await sleep(900); // dừng 0.9s sau khi click
-        }
+      // 6. Switch to Track 4: Chuột luôn lướt tới chọn Track 4
+      const row4 = document.querySelector('.track-row[data-track="4"]');
+      if (row4) {
+        row4.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        await sleep(350);
+        const r = row4.getBoundingClientRect();
+        fakeCursor.style.left = (window.innerWidth * .5) + 'px';
+        fakeCursor.style.top = (window.innerHeight * .55) + 'px';
+        fakeCursor.style.display = 'block';
+        await sleep(800);
+        await moveCursorTo(r.left + 72, r.top + r.height / 2, 3400); // di chuyển từ từ trong 3.4s
+        await sleep(1400); // dừng lại ngắm bài 4
+        simulateClick(row4);
+        await sleep(900); // dừng 0.9s sau khi click
       }
       playTrack(4);
-      if (!userTouched) {
-        await sleep(1200);
-        fakeCursor.style.display = 'none';
-      }
+      await sleep(1200);
+      fakeCursor.style.display = 'none';
     }
 
     /* ============================================================
@@ -2410,18 +2756,14 @@
     async function advanceThenPlay(nextId) {
       // Fade out video overlay
       videoOv.classList.remove('vis');
-      await sleep(1800); // Chờ giao diện Spotify lắng đọng hoàn toàn
-
-      if (userTouched) {
-        // User is in control, don't show cursor
-        await sleep(800);
-        playTrack(nextId);
-        return;
-      }
+      await sleep(1600); // Chờ giao diện Spotify lắng đọng hoàn toàn
 
       // Animate cursor to next track row
       const row = document.querySelector(`.track-row[data-track="${nextId}"]`);
       if (!row) { playTrack(nextId); return; }
+
+      row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      await sleep(350);
 
       const r = row.getBoundingClientRect();
       const tx = r.left + 72, ty = r.top + r.height / 2;
@@ -2431,18 +2773,16 @@
       fakeCursor.style.top = (window.innerHeight * .45) + 'px';
       fakeCursor.style.display = 'block';
 
-      await sleep(900);                 // nghỉ 0.9s trước khi chuột di chuyển
-      await moveCursorTo(tx, ty, 3800); // lướt chuột chậm rãi, từ tốn trong 3.8s
-      await sleep(1400);                // dừng ngắm bài hát 1.4s trước khi bấm
+      await sleep(800);                 // nghỉ 0.8s trước khi chuột di chuyển
+      await moveCursorTo(tx, ty, 3500); // lướt chuột chậm rãi, từ tốn trong 3.5s
+      await sleep(1300);                // dừng ngắm bài hát 1.3s trước khi bấm
 
-      if (!userTouched) {
-        simulateClick(row);
-        await sleep(900);               // dừng 0.9s sau khi click rồi mới phát bài mới
-      }
+      simulateClick(row);               // Chuột click chọn bài hát
+      await sleep(900);                 // dừng 0.9s sau khi click rồi mới phát bài mới
 
       playTrack(nextId);
       await sleep(1200);
-      if (!userTouched) fakeCursor.style.display = 'none';
+      fakeCursor.style.display = 'none';
     }
 
     /* ============================================================
@@ -2501,7 +2841,8 @@
       if (!videoEl.duration) return;
       const bar = document.getElementById('progBar');
       const r = bar.getBoundingClientRect();
-      const pct = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const pct = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
       videoEl.currentTime = pct * videoEl.duration;
       tickProgress();
     }
@@ -2510,7 +2851,8 @@
       if (!videoEl.duration) return;
       const bar = document.getElementById('vcProg');
       const r = bar.getBoundingClientRect();
-      const pct = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const pct = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
       videoEl.currentTime = pct * videoEl.duration;
       tickProgress();
     }
@@ -2518,7 +2860,8 @@
     function setVolume(e) {
       const bar = document.getElementById('volBar');
       const r = bar.getBoundingClientRect();
-      const pct = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const pct = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
       volLevel = pct;
       videoEl.volume = Math.min(1, pct);
       document.getElementById('volFill').style.width = (pct * 100) + '%';
@@ -2625,21 +2968,28 @@
     progBar.addEventListener('mousedown', e => { isDragging = true; seekFromBar(e); });
     document.addEventListener('mousemove', e => { if (isDragging) seekFromBar(e); });
     document.addEventListener('mouseup', () => { isDragging = false; });
+    progBar.addEventListener('touchstart', e => { isDragging = true; seekFromBar(e); }, { passive: true });
+    document.addEventListener('touchmove', e => { if (isDragging) seekFromBar(e); }, { passive: true });
+    document.addEventListener('touchend', () => { isDragging = false; });
 
     // Progress bar (video overlay)
     document.getElementById('vcProg').addEventListener('click', e => { userTouched = true; seekFromVC(e); });
+    document.getElementById('vcProg').addEventListener('touchstart', e => { userTouched = true; seekFromVC(e); }, { passive: true });
 
     // Volume
     document.getElementById('volBar').addEventListener('click', e => { userTouched = true; setVolume(e); });
 
-    // Hide controls on inactivity during video
-    vidWrap.addEventListener('mousemove', () => {
+    // Hide controls on inactivity during video (support both mouse & touch)
+    const showVcControls = () => {
       document.getElementById('vcBar').classList.remove('hid');
       clearTimeout(ctlHideTimer);
       ctlHideTimer = setTimeout(() => {
         if (isPlaying) document.getElementById('vcBar').classList.add('hid');
       }, 3200);
-    });
+    };
+    vidWrap.addEventListener('mousemove', showVcControls);
+    vidWrap.addEventListener('touchstart', showVcControls, { passive: true });
+    vidWrap.addEventListener('click', showVcControls);
 
     // Keyboard
     document.addEventListener('keydown', e => {
@@ -2657,13 +3007,6 @@
         else if (videoOv.classList.contains('vis')) exitToSpotify();
       }
     });
-
-    // If user moves mouse, mark as touched and hide fake cursor
-    document.addEventListener('mousemove', () => {
-      if (!autoSeqDone) return; // don't mark touched during pre-sequence
-      userTouched = true;
-      if (fakeCursor.style.display !== 'none') fakeCursor.style.display = 'none';
-    }, { passive: true });
 
     // Video error
     videoEl.addEventListener('error', () => {
